@@ -3,5 +3,5 @@ import { NextRequest } from "next/server";
 // route is siteurl/api/echo
 // returns req
 export default function GET(req: NextRequest) {
-    return req.json();
+	return req.json();
 }

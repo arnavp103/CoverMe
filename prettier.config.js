@@ -1,5 +1,6 @@
 // prettier.config.js
 module.exports = {
+	useTabs: true,
 	arrowParens: "always",
 	singleQuote: false,
 	bracketSpacing: true,
