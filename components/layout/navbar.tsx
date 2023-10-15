@@ -28,7 +28,7 @@ export default function NavBar({ session }: { session: Session | null }) {
 					>
 						<Image
 							src="/CoverMe.png"
-							alt="Precedent logo"
+							alt="CoverMe logo"
 							width="30"
 							height="30"
 							className="mr-2 rounded-sm"
@@ -37,7 +37,15 @@ export default function NavBar({ session }: { session: Session | null }) {
 					</Link>
 					<div>
 						{session ? (
-							<UserDropdown session={session} />
+							<div className="mx-2 flex h-full items-center justify-between">
+								<Link
+									href="/jobs"
+									className="rounded-full border border-black bg-black p-1.5 px-4 text-sm text-white transition-all hover:bg-white hover:text-black"
+								>
+									Jobs 💼
+								</Link>
+								<UserDropdown session={session} />
+							</div>
 						) : (
 							<button
 								className="rounded-full border border-black bg-black p-1.5 px-4 text-sm text-white transition-all hover:bg-white hover:text-black"
