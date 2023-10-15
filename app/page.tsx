@@ -46,6 +46,7 @@ export default async function Home() {
           <a
             className="group flex max-w-fit items-center justify-center space-x-2 rounded-full border border-black bg-black px-7 py-4 text- text-white transition-colors hover:bg-white hover:text-black"
             href={`.`}
+            // onClick={}
           >
             <FileText />
             <p>Find a job for you</p>
