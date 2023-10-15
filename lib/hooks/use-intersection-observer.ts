@@ -1,3 +1,6 @@
+// This tells what is currently on screen and visible to user based on monitor/window size
+
+
 import { RefObject, useEffect, useState } from "react";
 
 interface Args extends IntersectionObserverInit {
