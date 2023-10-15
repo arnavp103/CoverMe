@@ -37,7 +37,7 @@ export default function NavBar({ session }: { session: Session | null }) {
 					</Link>
 					<div>
 						{session ? (
-							<div className="mx-2 flex h-full items-center justify-between">
+							<div className="flex h-full w-full items-center justify-between space-x-4">
 								<Link
 									href="/jobs"
 									className="rounded-full border border-black bg-black p-1.5 px-4 text-sm text-white transition-all hover:bg-white hover:text-black"
