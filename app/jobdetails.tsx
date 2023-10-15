@@ -1,1 +1,0 @@
-// This page will contain more information on a job and the apply button as well
