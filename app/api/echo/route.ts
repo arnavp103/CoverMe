@@ -1,7 +1,7 @@
-import { NextRequest } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 // example api route
 // route is siteurl/api/echo
 // returns req
-export default function GET(req: NextRequest) {
-    return req.json();
+export async function GET(req: NextRequest) {
+    return NextResponse.json(req);
 }
