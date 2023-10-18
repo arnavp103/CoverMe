@@ -23,7 +23,7 @@ export default function Page() {
 		setPositionName(title);
 		// return;
 		axios
-			.post("http://localhost:3000/api/apply", {
+			.post("/api/apply", {
 				title,
 				description,
 			})

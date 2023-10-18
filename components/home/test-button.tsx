@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function TestButton() {
 	const echoTest = async () => {
-		const resp = await axios.get(`./api/echo`);
+		const resp = await axios.get(`/api/echo`);
 		console.log(resp);
 	};
 

@@ -23,7 +23,7 @@ const JobListingFeed = () => {
 	const [hasMore, setHasMore] = useState(true);
 	const fetchPosts = async () => {
 		try {
-			const data = await axios.get("http://localhost:3000/api/jobs", {
+			const data = await axios.get("/api/jobs", {
 				params: {
 					page: page,
 				},
