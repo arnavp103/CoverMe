@@ -6,6 +6,7 @@ import useScroll from "@/lib/hooks/use-scroll";
 import { useSignInModal } from "./sign-in-modal";
 import UserDropdown from "./user-dropdown";
 import { Session } from "next-auth";
+import { Button } from "@/components/Button";
 
 export default function NavBar({ session }: { session: Session | null }) {
 	const { SignInModal, setShowSignInModal } = useSignInModal();
@@ -38,21 +39,19 @@ export default function NavBar({ session }: { session: Session | null }) {
 					<div>
 						{session ? (
 							<div className="flex h-full w-full items-center justify-between space-x-4">
-								<Link
-									href="/jobs"
-									className="rounded-full border border-black bg-black p-1.5 px-4 text-sm text-white transition-all hover:bg-white hover:text-black"
-								>
-									Jobs 💼
-								</Link>
+								<Button asChild variant="ghost">
+									<Link href="/jobs">Jobs 💼</Link>
+								</Button>
 								<UserDropdown session={session} />
 							</div>
 						) : (
-							<button
-								className="rounded-full border border-black bg-black p-1.5 px-4 text-sm text-white transition-all hover:bg-white hover:text-black"
+							<Button
+								variant="ghost"
+								className="border-blue-500"
 								onClick={() => setShowSignInModal(true)}
 							>
 								Sign In
-							</button>
+							</Button>
 						)}
 					</div>
 				</div>

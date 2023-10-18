@@ -1,10 +1,12 @@
-import { withAuth } from "next-auth/middleware";
+// import { withAuth } from "next-auth/middleware";
 
-// https://github.com/nextauthjs/next-auth/discussions/4078
-export default withAuth({
-	pages: {
-		signIn: "/login",
-	},
-});
+// // https://github.com/nextauthjs/next-auth/discussions/4078
+// export default withAuth({
+// 	pages: {
+// 		signIn: "/login",
+// 	},
+// });
 
-export const config = { matcher: ["/jobs"] };
+// export const config = { matcher: ["/jobs"] };
+
+export default function withAuth() {}

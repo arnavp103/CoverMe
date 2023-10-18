@@ -2,10 +2,11 @@
 
 import { useState } from "react";
 import { signOut } from "next-auth/react";
-import { LayoutDashboard, LogOut } from "lucide-react";
+import { LogOut } from "lucide-react";
 import Popover from "@/components/shared/popover";
 import Image from "next/image";
 import { Session } from "next-auth";
+import { Button } from "@/components/Button";
 
 export default function UserDropdown({ session }: { session: Session }) {
 	const { email, image } = session?.user || {};
@@ -28,20 +29,15 @@ export default function UserDropdown({ session }: { session: Session }) {
 								{session?.user?.email}
 							</p>
 						</div>
-						<button
-							className="relative flex w-full cursor-not-allowed items-center justify-start space-x-2 rounded-md p-2 text-left text-sm transition-all duration-75 hover:bg-gray-100"
-							disabled
-						>
-							<LayoutDashboard className="h-4 w-4" />
-							<p className="text-sm">Dashboard</p>
-						</button>
-						<button
-							className="relative flex w-full items-center justify-start space-x-2 rounded-md p-2 text-left text-sm transition-all duration-75 hover:bg-gray-100"
+
+						<Button
+							variant="outline"
 							onClick={() => signOut()}
+							className="w-full"
 						>
 							<LogOut className="h-4 w-4" />
 							<p className="text-sm">Logout</p>
-						</button>
+						</Button>
 					</div>
 				}
 				align="end"
