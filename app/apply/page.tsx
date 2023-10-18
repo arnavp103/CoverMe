@@ -23,10 +23,14 @@ export default function Page() {
 		setPositionName(title);
 		// return;
 		axios
-			.post("/api/apply", {
-				title,
-				description,
-			})
+			.post(
+				"/api/apply",
+				{
+					title,
+					description,
+				},
+				{ timeout: 60000 },
+			)
 			.then((res) => {
 				setContent(res.data);
 			});
