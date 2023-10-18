@@ -8,7 +8,7 @@ const SkeletonLoader = () => {
 				<Skeleton className="h-2/3 w-full bg-gray-300" />
 				<Skeleton className="h-2/3 w-full bg-gray-300" />
 			</div> */}
-			<Skeleton className="h-full w-full rounded-xl bg-gray-300" />
+			<Skeleton className="h-full w-full rounded-xl bg-gray-300/50" />
 		</div>
 	);
 };
