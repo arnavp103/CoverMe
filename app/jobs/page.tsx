@@ -20,7 +20,7 @@ export default async function Page() {
 				Available jobs in your area
 			</p>
 			<br className="mb-4" />
-			<div className="overflow-clips relative flex w-1/3 items-center gap-2 rounded-lg">
+			<div className="overflow-clips relative flex w-2/3 items-center gap-2 rounded-lg md:w-1/3">
 				<SearchIcon className="absolute h-full w-12 rounded-l-lg bg-black px-3 text-white" />
 				<Input
 					type="text"
@@ -30,7 +30,7 @@ export default async function Page() {
 			</div>
 			<br className="mb-4" />
 
-			<div className="flex w-1/2 flex-col flex-wrap gap-2">
+			<div className="flex w-2/3 flex-col flex-wrap items-center justify-center gap-2 md:w-1/2">
 				<JobListingFeed />
 			</div>
 		</div>

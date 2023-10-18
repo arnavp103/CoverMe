@@ -88,7 +88,7 @@ const JobListingFeed = () => {
 								<CardDescription>{description}</CardDescription>
 							</CardHeader>
 							<CardContent></CardContent>
-							<CardFooter className="relative ">
+							<CardFooter className="relative flex-wrap md:flex">
 								<Link href={link} className="text-gray-400">
 									View Job Page
 								</Link>
