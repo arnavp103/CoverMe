@@ -7,14 +7,14 @@ import Footer from "@/components/layout/footer";
 import { Suspense } from "react";
 
 export const metadata = {
-	title: "CoverMe - Your job application companion",
+	title: "CoverMe - Your Job Application Companion",
 	description:
 		"CoverMe helps you apply to jobs by aggregating job listings and providing you with a simple way to apply to them.",
 	twitter: {
 		card: "summary_large_image",
-		title: "CoverMe - Your job application companion",
+		title: "CoverMe - Your Job Application Companion",
 		description:
-			"Precedent is the all-in-one solution for your Next.js project. It includes a design system, authentication, analytics, and more.",
+			"CoverMe helps you apply to jobs by aggregating job listings and providing you with a simple way to apply to them.",
 		creator: "@steventey",
 	},
 	metadataBase: new URL("https://cover-me-sigma.vercel.app/"),
