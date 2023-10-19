@@ -74,7 +74,7 @@ const JobListingFeed = () => {
 						category,
 						description,
 					}) => (
-						<Card key={id} className="w-full">
+						<Card key={id} className="w-full bg-white">
 							<CardHeader>
 								<CardDescription className="text-lg">
 									{company}

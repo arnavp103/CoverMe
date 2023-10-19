@@ -1,5 +1,5 @@
 "use client";
-import CoverLetterSkeletonLoader from "@/components/CoverLetterSkeletonLoader";
+import CoverLetterReader from "@/components/CoverLetterReader";
 import axios from "axios";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -8,6 +8,7 @@ export default function Page() {
 	const searchParams = useSearchParams();
 	const [companyName, setCompanyName] = useState("[COMPANY_NAME]");
 	const [positionName, setPositionName] = useState("[POSITION_NAME]");
+	const [description, setDescription] = useState("[POSITION_NAME]");
 	const [content, setContent] = useState(null);
 
 	useEffect(() => {
@@ -21,20 +22,27 @@ export default function Page() {
 
 		setCompanyName(company);
 		setPositionName(title);
+		setDescription(description);
 		// return;
-		axios
-			.post(
-				"/api/apply",
-				{
-					title,
-					description,
-				},
-				{ timeout: 60000 },
-			)
-			.then((res) => {
-				setContent(res.data);
-			});
+		// axios
+		// 	.post(
+		// 		"/api/apply",
+		// 		{
+		// 			title,
+		// 			description,
+		// 		},
+		// 		{ timeout: 60000 },
+		// 	)
+		// 	.then((res) => {
+		// 		setContent(res.data);
+		// 	});
+		// <AutoSubmitForm
+		// 	actionUrl="/api/apply"
+		// 	params={{ title, description }}
+		// 	handleSubmit={handleSubmit}
+		// />;
 	}, []);
+
 	return (
 		<div className="z-10 flex min-h-screen w-full flex-col items-center justify-center py-2">
 			<h1 className="font-2xl font-semibold">
@@ -43,9 +51,14 @@ export default function Page() {
 			<h1 className="text-2xl">{companyName}</h1>
 			<h3>{positionName}</h3>
 			<br className="mb-4" />
-			<div className="h-full w-1/2 bg-white px-8 py-20 shadow-lg drop-shadow-lg">
-				<p style={{ whiteSpace: "pre-line" }}>{content}</p>
-				{!content && <CoverLetterSkeletonLoader />}
+			<div className="h-full min-h-screen w-2/3 bg-white px-8 py-20 shadow-lg drop-shadow-lg">
+				<CoverLetterReader
+					title={positionName}
+					description={description}
+					isReady={
+						positionName !== undefined && description !== undefined
+					}
+				/>
 			</div>
 		</div>
 	);
