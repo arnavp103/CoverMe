@@ -9,7 +9,7 @@ export default function Page() {
 	const [companyName, setCompanyName] = useState("[COMPANY_NAME]");
 	const [positionName, setPositionName] = useState("[POSITION_NAME]");
 	const [description, setDescription] = useState("[POSITION_NAME]");
-	const [content, setContent] = useState(null);
+	const [triggered, setTriggered] = useState(false);
 
 	useEffect(() => {
 		// setContent(
@@ -23,6 +23,7 @@ export default function Page() {
 		setCompanyName(company);
 		setPositionName(title);
 		setDescription(description);
+		setTriggered(true);
 		// return;
 		// axios
 		// 	.post(
@@ -45,9 +46,7 @@ export default function Page() {
 
 	return (
 		<div className="z-10 flex min-h-screen w-full flex-col items-center justify-center py-2">
-			<h1 className="font-2xl font-semibold">
-				{!content && "Generating"} Your Cover Letter for
-			</h1>
+			<h1 className="font-2xl font-semibold">Your Cover Letter for</h1>
 			<h1 className="text-2xl">{companyName}</h1>
 			<h3>{positionName}</h3>
 			<br className="mb-4" />
@@ -55,9 +54,7 @@ export default function Page() {
 				<CoverLetterReader
 					title={positionName}
 					description={description}
-					isReady={
-						positionName !== undefined && description !== undefined
-					}
+					isReady={triggered}
 				/>
 			</div>
 		</div>

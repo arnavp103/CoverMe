@@ -14,14 +14,6 @@ const CoverLetterReader = ({
 	description,
 	isReady,
 }: CoverLetterReaderProps) => {
-	// var useChatObj = useChat({
-	// 	api: "/api/apply",
-	// 	body: {
-	// 		title,
-	// 		description,
-	// 	},
-	// });
-
 	const useChatObj = useChat({
 		api: "/api/apply",
 		body: {
@@ -33,8 +25,8 @@ const CoverLetterReader = ({
 	const { messages, append, reload } = useChatObj;
 
 	useEffect(() => {
+		if (!isReady) return;
 		const dummyMessage: Message = { id: "69", role: "user", content: "" };
-
 		append(dummyMessage, { options: { body: { title, description } } });
 	}, [isReady]);
 
