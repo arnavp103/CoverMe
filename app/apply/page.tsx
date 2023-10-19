@@ -50,7 +50,7 @@ export default function Page() {
 			<h1 className="text-2xl">{companyName}</h1>
 			<h3>{positionName}</h3>
 			<br className="mb-4" />
-			<div className="h-full min-h-screen w-2/3 bg-white px-8 py-20 shadow-lg drop-shadow-lg">
+			<div className="h-full w-2/3 bg-white px-8 py-20 shadow-lg drop-shadow-lg">
 				<CoverLetterReader
 					title={positionName}
 					description={description}
