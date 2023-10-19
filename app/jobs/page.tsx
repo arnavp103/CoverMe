@@ -55,18 +55,21 @@ export default function Page() {
 				Available jobs in your area
 			</p>
 			<br className="mb-4" />
-			<div className="relative flex w-2/3 flex-col items-center gap-2 md:w-1/3">
-				<div className="overflow-clips relative flex w-full items-center gap-2 rounded-lg">
-					<SearchIcon className="absolute h-full w-12 rounded-l-lg bg-black px-3 text-white" />
-					<Input
-						type="text"
-						placeholder="SEARCH"
-						className="flex-1 pl-16"
-					/>
+			<div className="relative flex w-full flex-col items-center gap-2 md:w-1/3">
+				<div className="overflow-clips relative flex w-full flex-col items-center gap-2 rounded-lg md:flex-row">
+					<div className="relative flex w-full px-2">
+						<SearchIcon className="absolute h-full w-12 rounded-l-lg bg-black px-3 text-white" />
+						<Input
+							type="text"
+							placeholder="SEARCH"
+							className="pl-16"
+						/>
+					</div>
 					<Button
 						variant="ghost"
 						onClick={() => setFilterExpanded(!filterExpanded)}
 					>
+						<p className="mr-2 md:hidden">Open Filters</p>
 						<ChevronDown // Chevron Down has clearer expanded graphic.
 							className={cn(
 								filterExpanded && "!rotate-0 !opacity-100",
@@ -77,7 +80,7 @@ export default function Page() {
 				</div>
 				<div
 					className={cn(
-						"max-h-[70vh] w-full overflow-clip rounded-b-md bg-slate-300/30 p-2 transition-all",
+						"max-h-screen w-full overflow-clip rounded-b-md bg-slate-300/30 p-2 transition-all",
 						!filterExpanded && "!max-h-0 !p-0",
 					)}
 				>
@@ -113,7 +116,7 @@ export default function Page() {
 			</div>
 			<br className="mb-4" />
 
-			<div className="flex w-2/3 flex-col flex-wrap items-center justify-center gap-2">
+			<div className="w-full flex-col flex-wrap items-center justify-center gap-2 md:w-2/3">
 				<JobListingFeed />
 			</div>
 		</div>
