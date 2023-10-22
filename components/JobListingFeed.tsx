@@ -3,7 +3,6 @@ import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import InfiniteScroll from "react-infinite-scroll-component";
-import { Skeleton } from "./Skeleton";
 import { JobDetails } from "@/app/jobs/page";
 import { Button } from "@/components/Button";
 import {

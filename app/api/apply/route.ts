@@ -1,5 +1,6 @@
 import type { JobDetails } from "@/app/jobs/page";
-
+import { getServerSession } from "next-auth";
+import { authOptions } from "../auth/[...nextauth]/route";
 import { OpenAIStream, StreamingTextResponse } from "ai";
 
 import { NextResponse, NextRequest } from "next/server";
@@ -18,6 +19,11 @@ interface Job {
 export const runtime = "edge";
 
 export async function POST(req: NextRequest) {
+	const session = await getServerSession(authOptions);
+	if (!session) {
+		return NextResponse.redirect("/login");
+	}
+
 	const body: Job = await req.json();
 
 	if (body.title === undefined) {
@@ -39,7 +45,7 @@ export async function POST(req: NextRequest) {
 		messages: [
 			{
 				role: "user",
-				content: `You are a professional cover letter writer. Write a neat two 
+				content: `You are a professional cover letter writer. Write a neat two
 		body paragraph cover letter for someone applying for a ${body.title} job. Don't generate a heading for this letter.
 		The job description is:
 		${body.description}`,

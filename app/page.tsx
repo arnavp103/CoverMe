@@ -1,28 +1,11 @@
 import Card from "@/components/home/card";
 import { DEPLOY_URL } from "@/lib/constants";
-import { Github } from "@/components/shared/icons";
 import WebVitals from "@/components/home/web-vitals";
 import ComponentGrid from "@/components/home/component-grid";
 import Image from "next/image";
 import TestButton from "@/components/home/test-button";
 
 export default async function Home() {
-	// const { stargazers_count: stars } = await fetch(
-	//   "https://api.github.com/repos/steven-tey/precedent",
-	//   {
-	//     ...(process.env.GITHUB_OAUTH_TOKEN && {
-	//       headers: {
-	//         Authorization: `Bearer ${process.env.GITHUB_OAUTH_TOKEN}`,
-	//         "Content-Type": "application/json",
-	//       },
-	//     }),
-	//     // data will revalidate every 24 hours
-	//     next: { revalidate: 86400 },
-	//   },
-	// )
-	//   .then((res) => res.json())
-	//   .catch((e) => console.log(e));
-
 	return (
 		<>
 			<div className="z-10 w-full max-w-xl px-5 xl:px-0">
@@ -53,19 +36,6 @@ export default async function Home() {
 					}}
 				>
 					<TestButton />
-
-					{/* <a
-            className="flex max-w-fit items-center justify-center space-x-2 rounded-full border border-gray-300 bg-white px-5 py-2 text-sm text-gray-600 shadow-md transition-colors hover:border-gray-800"
-            href="https://github.com/steven-tey/precedent"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Github />
-            <p>
-              <span className="hidden sm:inline-block">Star on</span> GitHub{" "}
-              <span className="font-semibold">{nFormatter(stars)}</span>
-            </p>
-          </a> */}
 				</div>
 			</div>
 			<div className="my-10 grid w-full max-w-screen-xl animate-fade-up grid-cols-1 gap-5 px-5 md:grid-cols-3 xl:px-0">
