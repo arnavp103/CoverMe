@@ -3,5 +3,5 @@ import { NextRequest, NextResponse } from "next/server";
 // route is siteurl/api/echo
 // returns req
 export async function GET(req: NextRequest) {
-	return NextResponse.json(req);
+	return NextResponse.json({ ...req, msg: "OH YEAH" });
 }

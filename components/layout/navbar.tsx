@@ -15,7 +15,7 @@ export default function NavBar({ session }: { session: Session | null }) {
 	return (
 		<>
 			<SignInModal />
-			<div
+			<nav
 				className={`fixed top-0 flex w-full justify-center ${
 					scrolled
 						? "border-b border-gray-200 bg-white/50 backdrop-blur-xl"
@@ -55,7 +55,7 @@ export default function NavBar({ session }: { session: Session | null }) {
 						)}
 					</div>
 				</div>
-			</div>
+			</nav>
 		</>
 	);
 }

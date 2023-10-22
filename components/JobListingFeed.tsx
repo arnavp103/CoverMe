@@ -3,7 +3,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import InfiniteScroll from "react-infinite-scroll-component";
-import { JobDetails } from "@/app/jobs/page";
+import { JobDetails } from "@/app/(site)/jobs/page";
 import { Button } from "@/components/Button";
 import {
 	Card,
@@ -95,7 +95,7 @@ const JobListingFeed = () => {
 								</Link>
 
 								<Link
-									className="ml-auto"
+									className="ml-auto pr-4"
 									href={{
 										pathname: "apply/",
 										query: {
@@ -107,7 +107,7 @@ const JobListingFeed = () => {
 								>
 									<Button
 										variant="secondary"
-										className="w-32 pr-4"
+										className="w-32 "
 									>
 										Apply
 									</Button>

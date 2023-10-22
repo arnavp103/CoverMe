@@ -2,7 +2,7 @@
 import { ImageResponse } from "next/server";
 
 export const runtime = "edge";
-export const alt = "Precedent - Building blocks for your Next.js project";
+export const alt = "CoverMe - Your best friend all things job applications";
 export const contentType = "image/png";
 
 export default async function OG() {

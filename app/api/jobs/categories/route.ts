@@ -1,8 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
 import axios from "axios";
-import { CategorySchema } from "@/app/jobs/page";
+import { CategorySchema } from "@/app/(site)/jobs/page";
+
+let FirstReq: Array<CategorySchema> | null = null;
 
 export async function GET(req: NextRequest) {
+	if (FirstReq) return NextResponse.json(FirstReq);
+
 	const countryParam =
 		(req.nextUrl.searchParams.get("country") as string) || "ca";
 
@@ -15,9 +19,10 @@ export async function GET(req: NextRequest) {
 		.get(url)
 		.then((response) => response.data.results)
 		.catch((e) => {
-			console.error(e);
+			// console.error(e);
 			return [];
 		});
 
+	FirstReq = response;
 	return NextResponse.json(response);
 }
