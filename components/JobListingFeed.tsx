@@ -107,7 +107,7 @@ const JobListingFeed = () => {
 								>
 									<Button
 										variant="secondary"
-										className="w-32"
+										className="w-32 pr-4"
 									>
 										Apply
 									</Button>
@@ -120,7 +120,6 @@ const JobListingFeed = () => {
 											id,
 											title,
 											company,
-											location,
 											link,
 											description,
 										},
