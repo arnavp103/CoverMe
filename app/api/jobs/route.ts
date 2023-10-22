@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { JobDetails } from "@/app/jobs/page";
+import type { JobDetails } from "@/app/(site)/jobs/page";
 import axios from "axios";
 
 interface AdzunaJobListing {
