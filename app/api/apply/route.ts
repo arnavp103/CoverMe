@@ -1,5 +1,5 @@
 import type { JobDetails } from "@/app/jobs/page";
-import { getServerSession } from "next-auth";
+import { getSession } from "next-auth/react";
 import { authOptions } from "../auth/[...nextauth]/route";
 import { OpenAIStream, StreamingTextResponse } from "ai";
 
@@ -19,7 +19,7 @@ interface Job {
 export const runtime = "edge";
 
 export async function POST(req: NextRequest) {
-	const session = await getServerSession(authOptions);
+	const session = await getSession();
 	if (!session) {
 		return NextResponse.redirect("/login");
 	}
