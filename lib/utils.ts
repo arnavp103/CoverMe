@@ -13,6 +13,14 @@ export const timeAgo = (timestamp: Date, timeOnly?: boolean): string => {
 	}`;
 };
 
+export async function urlPath() {
+	const env = process.env.NODE_ENV;
+	const url =
+		env === "development"
+			? "http://localhost:3000"
+			: "https://cover-me-sigma.vercel.app/";
+}
+
 export async function fetcher<JSON = any>(
 	input: RequestInfo,
 	init?: RequestInit,
