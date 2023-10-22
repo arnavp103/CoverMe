@@ -68,7 +68,7 @@ const JobListingFeed = () => {
 						id,
 						title,
 						company,
-						// location,
+						location,
 						link,
 						category,
 						description,
