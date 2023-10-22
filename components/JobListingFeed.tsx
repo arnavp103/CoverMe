@@ -64,8 +64,8 @@ const JobListingFeed = () => {
 			className="container flex h-full w-full flex-col items-center justify-center self-center"
 		>
 			<div className="flex w-full flex-col items-center space-y-4">
-				{posts.map(
-					({
+				{posts.map((job) => {
+					const {
 						id,
 						title,
 						company,
@@ -73,7 +73,9 @@ const JobListingFeed = () => {
 						link,
 						category,
 						description,
-					}) => (
+					} = job;
+
+					return (
 						<Card key={id} className="w-full bg-white">
 							<CardHeader>
 								<CardDescription className="text-lg">
@@ -111,10 +113,31 @@ const JobListingFeed = () => {
 										Apply
 									</Button>
 								</Link>
+
+								<Link
+									href={{
+										pathname: "jobs/view/",
+										query: {
+											id,
+											title,
+											company,
+											location,
+											link,
+											description,
+										},
+									}}
+								>
+									<Button
+										variant="secondary"
+										className="w-32"
+									>
+										View Job
+									</Button>
+								</Link>
 							</CardFooter>
 						</Card>
-					),
-				)}
+					);
+				})}
 			</div>
 		</InfiniteScroll>
 	);
