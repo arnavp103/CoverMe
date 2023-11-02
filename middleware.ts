@@ -47,7 +47,9 @@ import type { NextRequest } from "next/server";
 
 // This function can be marked `async` if using `await` inside
 export function middleware(request: NextRequest) {
-	var userToken = request.cookies.get("next-auth.session-token")?.value;
+	let userToken =
+		request.cookies.get("next-auth.session-token")?.value ||
+		request.cookies.get("__Secure-next-auth.session-token")?.value;
 
 	if (!userToken) {
 		return NextResponse.redirect(new URL("/login", request.url));
