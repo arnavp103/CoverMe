@@ -6,8 +6,7 @@
   </a>
 </h1>
 
-<img src="demo.png" alt="Image of family tree"/>
-**CoverMe is your best friend in all things job applications.**
+*CoverMe is your best friend in all things job applications.*
 
 CoverMe is a job application framework that aggregates job listings from apis and presents them to the user in a simple and intuitive manner.
 The webapp is designed to be mobile friendly and pro-accessibility. It was birthed out of a two day hackathon, refined over weeks
